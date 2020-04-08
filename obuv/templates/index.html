@@ -1,4 +1,4 @@
-{%load staticfiles%}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,15 @@
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 </head>
 <body>
-Hello
+    <header>
+        <div></div>
+    </header>
+
+    {% block context %}
+    {% endblock %}
+
+    <footer>
+        <div></div>
+    </footer>
 </body>
-</html>git
+</html>
