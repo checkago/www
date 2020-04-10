@@ -7,5 +7,5 @@ def index(request):
     products = Product.objects.all()
     title = 'Производство обуви'
     description = 'Бла Бла Бла'
-    return render(request, 'index.html', {'title':title, 'banners':banners, 'description':description,
-                                          'products':products})
+    return render(request, 'index.html', {'title': title, 'banners': banners, 'description': description,
+                                          'products': products})
