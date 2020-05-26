@@ -1,1493 +1,332 @@
 {% load static %}
-<!doctype html>
-<html class="no-js" lang="en-US">
-
-<head>
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ title }}</title>
-    <meta name="description" content="Default Description">
-    <meta name="keywords" content="E-commerce" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/icon/favicon.png' %}">
-    <!-- Google Font css -->
-    <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
+    <meta name="description" content="{{ description }}" />
+    <title>{{ title }}</title>
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}" type="image/x-icon" />
+    <!--=== All Plugins CSS ===-->
+    <link href="{% static '/css/plugins.css' %}" rel="stylesheet">
+    <!--=== All Vendor CSS ===-->
+    <link href="{% static '/css/vendor.css' %}" rel="stylesheet">
+    <!--=== Main Style CSS ===-->
+    <link href="{% static '/css/style.css' %}" rel="stylesheet">
+    <!-- Modernizer JS -->
+    <script src="{% static '/js/modernizr-2.8.3.min.js' %}"></script>
 
-    <!-- mobile menu css -->
-    <link href="{% static '/css/meanmenu.min.css' %}" rel="stylesheet">
-    <!-- animate css -->
-    <link href="{% static '/css/animate.css' %}" rel="stylesheet">
-    <!-- nivo slider css -->
-    <link href="{% static '/css/nivo-slider.css' %}" rel="stylesheet">
-    <!-- owl carousel css -->
-    <link href="{% static '/css/owl.carousel.min.css' %}" rel="stylesheet">
-    <!-- slick css -->
-    <link href="{% static '/css/slick.css' %}" rel="stylesheet">
-    <!-- price slider css -->
-    <link href="{% static '/css/jquery-ui.min.css' %}" rel="stylesheet">
-    <!-- fontawesome css -->
-    <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
-     <!-- fancybox css -->
-    <link href="{% static '/css/jquery.fancybox.css' %}" rel="stylesheet">
-    <!-- bootstrap css -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <!-- default css  -->
-    <link href="{% static '/css/default.css' %}" rel="stylesheet">
-    <!-- style css -->
-    <link href="{% static '/style.css' %}" rel="stylesheet">
-    <!-- responsive css -->
-    <link href="{% static '/css/responsive.css' %}" rel="stylesheet">
-
-    <!-- modernizr js -->
-    <script src="{% static '/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
-    <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <!-- Wrapper Start -->
-    <div class="box-wrapper homepage">
-        <div class="box-layout">
-        <!-- Header Area Start -->
-            <header>
-               {% include 'top_bar.html' %}
-                <!-- Header Bottom Start -->
-                <div class="header-bottom header-sticky">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-2 col-sm-5 col-5">
-                                <div class="logo">
-                                    <a href="/"><img src="{% static 'img/logo/logo.png' %}" alt="logo-image"></a>
-                                </div>
+
+    <!-- Start Header Area -->
+    <header class="header-area">
+        <!-- main header start -->
+        <div class="main-header d-none d-lg-block">
+            <!-- header top start -->
+            <div class="header-top theme-bg">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="header-top-settings">
+                                <ul class="nav align-items-center justify-content-start">
+                                    <li><i class="fa fa-envelope"></i>  info@obuv-era.ru</li>
+                                    <li><i class="fa fa-phone"></i>  +7 (495) 555 55 55</li>
+                                </ul>
                             </div>
-                            <!-- Primary Vertical-Menu End -->
-                            <!-- Search Box Start -->
-                            <div class="col-xl-6 col-lg-7 d-none d-lg-block">
-                                <div class="middle-menu pull-right">
-                                    <nav>
-                                        <ul class="middle-menu-list">
-                                            <li><a href="/">Главная</a></li>
-                                            <li><a href="about">О нас</a></li>
-                                            <li><a href="catalog">Обувь<i class="fa fa-angle-down"></i></a>
-                                                <!-- Home Version Dropdown Start -->
-                                                <ul class="ht-dropdown dropdown-style-two">
-                                                    <li><a href="shop.html">Мужская</a>
-                                                        <!-- Start Three Step -->
-                                                        <ul class="ht-dropdown dropdown-style-two sub-menu">
-                                                            <li><a href="shop.html">Галоши</a></li>
-                                                            <li><a href="shop.html">Боты</a></li>
-                                                            <li><a href="shop.html">Сабо</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="shop.html">Женская</a>
-                                                        <!-- Start Three Step -->
-                                                        <ul class="ht-dropdown dropdown-style-two sub-menu">
-                                                            <li><a href="shop.html">Галоши</a></li>
-                                                            <li><a href="shop.html">Боты</a></li>
-                                                            <li><a href="shop.html">Сабо</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="shop.html">Детская</a>
-                                                        <!-- Start Three Step -->
-                                                        <ul class="ht-dropdown dropdown-style-two sub-menu">
-                                                            <li><a href="shop.html">Галоши</a></li>
-                                                            <li><a href="shop.html">Боты</a></li>
-                                                            <li><a href="shop.html">Сабо</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                                <!-- Home Version Dropdown End -->
-                                            </li>
-                                            <li><a href="contact.html">Контакты</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <div class="header-top-settings">
+                                <ul class="nav align-items-center justify-content-end">
+                                    <li>Мы в соц. сетях:</li>
+                                    <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li> <a href="#"><i class="fa fa-vk"></i></a></li>
+                                </ul>
                             </div>
-                            <div class="col-lg-3 col-md-12 d-center">
-                                <div class="header-top-left">
-                                    <img src="{% static '/img/icon/call.png' %}" alt="">Звоните : +7 (495) 555-33-11
-                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header top end -->
+
+            <!-- header middle area start -->
+            <div class="header-main-area sticky">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+                        <!-- start logo area -->
+                        <div class="col-lg-2">
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="{% static '/img/logo/logo.png' %}" alt="">
+                                </a>
                             </div>
-                            <!-- Cart Box Start -->
-                            <!-- <div class="col-lg-3 col-sm-7 col-7">
-                                <div class="cart-box text-right">
-                                    <ul>
-                                        <li><a href="compare.html"><i class="fa fa-cog"></i></a>
-                                            <ul class="ht-dropdown">
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="register.html">Register</a></li>
-                                                <li><a href="account.html">Account</a></li>
+                        </div>
+                        <!-- start logo area -->
+
+                        <!-- main menu area start -->
+                        <div class="col-lg-10 position-static">
+                            {% include '_menu.html' %}
+                        </div>
+                        <!-- main menu area end -->
+
+                        <!-- mini cart area start -->
+                        <!-- <div class="col-lg-2">
+                            <div class="header-configure-wrapper">
+                                <div class="header-configure-area">
+                                    <ul class="nav justify-content-end">
+                                        <li>
+                                            <a href="#" class="offcanvas-btn">
+                                                <i class="ion-ios-search-strong"></i>
+                                            </a>
+                                        </li>
+                                        <li class="user-hover">
+                                            <a href="#">
+                                                <i class="ion-ios-gear-outline"></i>
+                                            </a>
+                                            <ul class="dropdown-list">
+                                                <li><a href="login-register.html">login</a></li>
+                                                <li><a href="login-register.html">register</a></li>
+                                                <li><a href="my-account.html">my account</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
-                                            <ul class="ht-dropdown main-cart-box">
-                                                <li>
-
-                                                    <div class="single-cart-box">
-                                                        <div class="cart-img">
-                                                            <a href="#"><img src="{% static 'img/menu/1.jpg' %}" alt="cart-image"></a>
-                                                        </div>
-                                                        <div class="cart-content">
-                                                            <h6><a href="product.html">Products Name</a></h6>
-                                                            <span>1 × $399.00</span>
-                                                        </div>
-                                                        <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
-                                                    </div>
-
-                                                    <div class="single-cart-box">
-                                                        <div class="cart-img">
-                                                            <a href="#"><img src="{% static 'img/menu/2.jpg' %}" alt="cart-image"></a>
-                                                        </div>
-                                                        <div class="cart-content">
-                                                            <h6><a href="product.html">Products Name</a></h6>
-                                                            <span>2 × $299.00</span>
-                                                        </div>
-                                                        <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
-                                                    </div>
-
-                                                    <div class="cart-footer fix">
-                                                        <h5>total :<span class="f-right">$698.00</span></h5>
-                                                        <div class="cart-actions">
-                                                            <a class="checkout" href="checkout.html">Checkout</a>
-                                                        </div>
-                                                    </div>
-
-                                                </li>
-                                            </ul>
+                                        <li>
+                                            <a href="#" class="minicart-btn">
+                                                <i class="ion-bag"></i>
+                                                <div class="notification">2</div>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
-                            </div> -->
-
-                            <div class="col-sm-12 d-lg-none">
-                                <div class="mobile-menu">
-                                    <nav>
-                                        <ul>
-                                            <li><a href="/">Главная</a>
-                                            </li>
-                                            <li><a href="catalog">Обувь</a>
-                                                <!-- Mobile Menu Dropdown Start -->
-                                                <ul>
-                                                    <li><a href="shop.html">Мужская</a>
-                                                        <!-- Start Three Step -->
-                                                        <ul>
-                                                            <li><a href="shop.html">Галоши</a></li>
-                                                            <li><a href="shop.html">Боты</a></li>
-                                                            <li><a href="shop.html">Сабо</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="shop.html">Женская</a>
-                                                    <!-- Start Three Step -->
-                                                        <ul>
-                                                            <li><a href="shop.html">Галоши</a></li>
-                                                            <li><a href="shop.html">Боты</a></li>
-                                                            <li><a href="shop.html">Сабо</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="shop.html">Детская</a>
-                                                    <!-- Start Three Step -->
-                                                        <ul>
-                                                            <li><a href="shop.html">Галоши</a></li>
-                                                            <li><a href="shop.html">Боты</a></li>
-                                                            <li><a href="shop.html">Сабо</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                                <!-- Mobile Menu Dropdown End -->
-                                            </li>
-                                            <li><a href="about">О нас</a></li>
-                                            <li><a href="contact">Контакты</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <!-- Mobile Menu  End -->
-                        </div>
-                        <!-- Row End -->
-                    </div>
-                    <!-- Container End -->
-                </div>
-                <!-- Header Bottom End -->
-            </header>
-            <!-- Header Area End -->
-
-            <!-- Slider Area Start -->
-            {% include 'slider_main.html' %}
-            <!-- Slider Area End -->
-
-            <!-- Company Policy Start -->
-            <div class="company-policy pt-60 pb-60 pb-sm-25">
-                <div class="container">
-                    <div class="row">
-                        <!-- Single Policy Start -->
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="single-policy">
-                                <div class="icone-img">
-                                    <img src="{% static 'img/icon/1.png' %}" alt="">
-                                </div>
-                                <div class="policy-desc">
-                                    <h3>Free Delivery</h3>
-                                    <p>Free shipping on all order</p>
-                                </div>
                             </div>
                         </div>
-                        <!-- Single Policy End -->
-                        <!-- Single Policy Start -->
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="single-policy">
-                                <div class="icone-img">
-                                    <img src="{% static 'img/icon/2.png' %}" alt="">
-                                </div>
-                                <div class="policy-desc">
-                                    <h3>Online Support 24/7</h3>
-                                    <p>Support online 24 hours</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Policy End -->
-                        <!-- Single Policy Start -->
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="single-policy">
-                                <div class="icone-img">
-                                    <img src="{% static 'img/icon/3.png' %}" alt="">
-                                </div>
-                                <div class="policy-desc">
-                                    <h3>Money Return</h3>
-                                    <p>Back guarantee under 7 days</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Policy End -->
-                        <!-- Single Policy Start -->
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="single-policy">
-                                <div class="icone-img">
-                                    <img src="{% static 'img/icon/4.png' %}" alt="">
-                                </div>
-                                  <div class="policy-desc">
-                                    <h3>Member Discount</h3>
-                                    <p>Onevery order over $30.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Policy End -->
+                        <!-- mini cart area end -->
                     </div>
                 </div>
             </div>
-            <!-- Company policy End -->
+            <!-- header middle area end -->
+        </div>
+        <!-- main header start -->
 
-            <!-- New Products Start -->
-            <div class="new-products pt-60">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 order-2">
-                            <div class="side-product-list">
-                                <div class="group-title">
-                                    <h2>Top Products</h2>
-                                </div>
-                                <!-- Deal Pro Activation Start -->
-                                <div class="slider-right-content side-product-list-active owl-carousel">
-                                    <!-- Double Product Start -->
-                                    <div class="double-pro">
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/1.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/2.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/3.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/4.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/5.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                    </div>
-                                    <!-- Double Product End -->
-                                    <!-- Double Product Start -->
-                                    <div class="double-pro">
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/6.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/7.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/8.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/5.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/4.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                    </div>
-                                    <!-- Double Product End -->
-                                    <!-- Double Product Start -->
-                                    <div class="double-pro">
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/1.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/2.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/3.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/4.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                        <!-- Single Product Start -->
-                                        <div class="single-product">
-                                            <div class="pro-img">
-                                                <a href="product.html"><img class="img" src="{% static 'img/products/5.jpg' %}" alt="product-image"></a>
-                                            </div>
-                                            <div class="pro-content">
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <h4><a href="product.html">Products Name Here</a></h4>
-                                                <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product End -->
-                                    </div>
-                                    <!-- Double Product End -->
-                                </div>
-                                <!-- Deal Pro Activation End -->
+        <!-- mobile header start -->
+        <div class="mobile-header d-lg-none d-md-block sticky">
+            <!--mobile header top start -->
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="mobile-main-header">
+                            <div class="mobile-logo">
+                                <a href="index.html">
+                                    <img src="{% static '/img/logo/logo.png' %}" alt="Brand Logo">
+                                </a>
                             </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-8  order-lg-2">
-                            <!-- New Pro Content End -->
-                            <div class="new-pro-content">
-                                <div class="pro-tab-title border-line">
-                                    <!-- Featured Product List Item Start -->
-                                    <ul class="nav product-list product-tab-list mb-30">
-                                        <li><a  class="active" data-toggle="tab" href="#new-arrival">New Arrivals</a></li>
-                                        <li><a data-toggle="tab" href="#toprated">Featured</a></li>
-                                        <li><a data-toggle="tab" href="#new-arrival">Top Rated</a></li>
-                                    </ul>
-                                    <!-- Featured Product List Item End -->
-                                </div>
-                                <div class="tab-content product-tab-content jump">
-                                    <div id="new-arrival" class="tab-pane active">
-                                        <!-- New Products Activation Start -->
-                                        <div class="new-pro-active owl-carousel">
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                                <span class="sticker-new">-30%</span>
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                                <span class="sticker-new">-30%</span>
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                                <span class="sticker-new">-30%</span>
-                                            </div>
-                                            <!-- Single Product End -->
-                                        </div>
-                                        <!-- New Products Activation End -->
-                                    </div>
-                                    <!-- New Products End -->
-                                    <div id="toprated" class="tab-pane">
-                                        <!-- New Products Activation Start -->
-                                        <div class="new-pro-active owl-carousel">
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                                <span class="sticker-new">-30%</span>
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                            </div>
-                                            <!-- Single Product End -->
-                                            <!-- Single Product Start -->
-                                            <div class="single-product">
-                                                <!-- Product Image Start -->
-                                                <div class="pro-img">
-                                                    <a href="product.html">
-                                                        <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
-                                                        <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
-                                                    </a>
-                                                </div>
-                                                <!-- Product Image End -->
-                                                <!-- Product Content Start -->
-                                                <div class="pro-content">
-                                                    <div class="product-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                                    <div class="pro-actions">
-                                                        <div class="actions-secondary">
-                                                            <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                            <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Add To Cart</a>
-                                                            <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Product Content End -->
-                                            </div>
-                                            <!-- Single Product End -->
-                                        </div>
-                                        <!-- New Products Activation End -->
+                            <div class="mobile-menu-toggler">
+                                <!-- <div class="mini-cart-wrap">
+                                    <a href="cart.html">
+                                        <i class="ion-bag"></i>
+                                    </a>
+                                </div> -->
+                                <div class="mobile-menu-btn">
+                                    <div class="off-canvas-btn">
+                                        <i class="ion-navicon"></i>
                                     </div>
                                 </div>
-                                <!-- Tab-Content End -->
-                                <div class="single-banner zoom mt-30 mt-sm-10">
-                                <a href="#"><img src="{% static 'img/banner/tab-banner.jpg' %}" alt="slider-banner"></a>
                             </div>
-                            </div>
-                            <!-- New Pro Content End -->
                         </div>
                     </div>
-
                 </div>
-                <!-- Container End -->
             </div>
-            <!-- New Products End -->
+            <!-- mobile header top start -->
+        </div>
+        <!-- mobile header end -->
+    </header>
+    <!-- end Header Area -->
 
-            <!-- Banner Start -->
-            <div class="upper-banner banner ptb-60 ">
-                <div class="container">
-                   <div class="row">
-                       <!-- Single Banner Start -->
-                       <div class="col-sm-6">
-                            <div class="single-banner zoom">
-                                <a href="#"><img src="{% static 'img/banner/1.png' %}" alt="slider-banner"></a>
-                            </div>
-                        </div>
-                       <!-- Single Banner End -->
-                        <!-- Single Banner Start -->
-                       <div class="col-sm-6">
-                            <div class="single-banner zoom">
-                                <a href="#"><img src="{% static 'img/banner/2.png' %}" alt="slider-banner"></a>
-                            </div>
-                        </div>
-                       <!-- Single Banner End -->
-                   </div>
-                   <!-- Row End -->
-                </div>
-                <!-- Container End -->
-            </div>
-            <!-- Banner End -->
+    {% include '_aside_menu.html' %}
 
-            <!-- Best Products Start -->
-            <div class="best-seller-product pb-50 pb-sm-30">
-                <div class="container">
-                    <div class="group-title">
-                        <h2>Best Seller Products</h2>
-                    </div>
-                    <!-- Best Product Activation Start -->
-                    <div class="best-seller-pro-active  owl-carousel slider-right-content">
-                        <!-- Double Product Start -->
-                        <div class="double-pro">
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/1.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/2.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$150.00</span><del class="prev-price">$200.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                        </div>
-                        <!-- Double Product End -->
-                        <!-- Double Product Start -->
-                        <div class="double-pro">
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/3.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/4.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$150.00</span><del class="prev-price">$200.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                        </div>
-                        <!-- Double Product End -->
-                        <!-- Double Product Start -->
-                        <div class="double-pro">
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/5.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/6.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$150.00</span><del class="prev-price">$200.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                        </div>
-                        <!-- Double Product End -->
-                        <!-- Double Product Start -->
-                        <div class="double-pro">
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/7.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/8.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$150.00</span><del class="prev-price">$200.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                        </div>
-                        <!-- Double Product End -->
-                        <!-- Double Product Start -->
-                        <div class="double-pro">
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/5.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/6.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$150.00</span><del class="prev-price">$200.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                        </div>
-                        <!-- Double Product End -->
-                        <!-- Double Product Start -->
-                        <div class="double-pro">
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/7.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="pro-img">
-                                    <a href="product.html"><img class="img" src="{% static 'img/products/8.jpg' %}" alt="product-image"></a>
-                                </div>
-                                <div class="pro-content">
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <h4><a href="product.html">Products Name Here</a></h4>
-                                    <p><span class="price">$150.00</span><del class="prev-price">$200.00</del></p>
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                        </div>
-                        <!-- Double Product End -->
-                    </div>
-                    <!-- Best Product Activation End -->
-                </div>
-                <!-- Container End -->
-            </div>
-            <!-- Best Product End -->
+    {% block content %}
 
-            <!-- Blog Page Start -->
-            <div class="blog-area pb-60">
-                <div class="container">
-                    <div class="group-title">
-                        <h2>From The Blog</h2>
-                    </div>
-                     <!-- Popular Categorie Activation Start -->
-                     <div class="blog-active owl-carousel">
-                        <!-- Single Blog Start -->
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img src="{% static 'img/blog/1.jpg' %}" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectl adip elit, sed do eiusmod tempor</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>By: </span> <a href="#">Jantrik,</a></li>
-                                        <li><span>On: </span> <a href="#">05 Nov, 2018</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Read More.....</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img src="{% static 'img/blog/2.jpg' %}" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectl adip elit, sed do eiusmod tempor</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>By </span> <a href="#">Jantrik, </a></li>
-                                        <li><span>On </span> <a href="#">05 Nov, 2018</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Read More.....</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img src="{% static 'img/blog/3.jpg' %}" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectl adip elit, sed do eiusmod tempor</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>By </span> <a href="#">Jantrik, </a></li>
-                                        <li><span>On </span> <a href="#">05 Nov, 2018</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Read More.....</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img src="{% static 'img/blog/1.jpg' %}" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectl adip elit, sed do eiusmod tempor</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>By </span> <a href="#">Jantrik, </a></li>
-                                        <li><span>On </span> <a href="#">05 Nov, 2018</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Read More.....</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img src="{% static 'img/blog/2.jpg' %}" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectl adip elit, sed do eiusmod tempor</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>By </span> <a href="#">Jantrik, </a></li>
-                                        <li><span>On </span> <a href="#">05 Nov, 2018</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Read More.....</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><img src="{% static 'img/blog/3.jpg' %}" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectl adip elit, sed do eiusmod tempor</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>By </span> <a href="#">Jantrik, </a></li>
-                                        <li><span>On </span> <a href="#">05 Nov, 2018</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Read More.....</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Blog End -->
-                     </div>
-                     <!-- Popular Categorie Activation End -->
-                </div>
-                <!-- Container End -->
-            </div>
-            <!-- Blog Page End -->
+    {% endblock %}
 
-            <!-- Brand Logo Start -->
-            <div class="brand-area pb-60">
-                <div class="container">
-                    <!-- Brand Banner Start -->
-                    <div class="brand-banner owl-carousel">
-                        <div class="single-brand">
-                            <a href="#"><img class="img" src="{% static 'img/brand/1.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img src="{% static 'img/brand/2.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img src="{% static 'img/brand/3.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img src="{% static 'img/brand/4.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img src="{% static 'img/brand/5.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img class="img" src="{% static 'img/brand/1.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img src="{% static 'img/brand/2.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img src="{% static 'img/brand/3.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img src="{% static 'img/brand/4.png' %}" alt="brand-image"></a>
-                        </div>
-                        <div class="single-brand">
-                            <a href="#"><img src="{% static 'img/brand/5.png' %}" alt="brand-image"></a>
+    <!-- Start Footer Area Wrapper -->
+    <footer class="footer-wrapper">
+        <!-- footer main area start -->
+        <div class="footer-widget-area section-padding">
+            <div class="container">
+                <div class="row mtn-40">
+                    <!-- footer widget item start -->
+                    <div class="col-xl-5 col-lg-3 col-md-6">
+                        <div class="widget-item mt-40">
+                            <h5 class="widget-title">Наш адрес</h5>
+                            <div class="widget-body">
+                                <ul class="location-wrap">
+                                    <li><i class="ion-ios-location-outline"></i>Россия, Московская область, г. Мытищи</li>
+                                    <li><i class="ion-ios-email-outline"></i>Почта: <a href="mailto:info@obuv-era.ru">info@obuv-era.ru</a></li>
+                                    <li><i class="ion-ios-telephone-outline"></i>Телефон: +7 (495) 555 55 55</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <!-- Brand Banner End -->
+                    <!-- footer widget item end -->
+
+                    <!-- footer widget item start -->
+                    <div class="col-xl-2 col-lg-3 offset-xl-1 col-md-6">
+                        <div class="widget-item mt-40">
+                            <h5 class="widget-title">Меню</h5>
+                            <div class="widget-body">
+                                <ul class="justify-content-end">
+                                    <li><a href="/">Главная</a></li>
+                                    <li><a href="/about_us">О нас</a></li>
+                                    <li><a href="/catalog">Каталог</a></li>
+                                    <li><a href="/articles">Статьи</a> </li>
+                                    <li><a href="/contacts">Контакты</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- footer widget item end -->
                 </div>
             </div>
-            <!-- Brand Logo End -->
+        </div>
+        <!-- footer main area end -->
 
-            {% include 'footer.html' %}
+        <!-- footer bottom area start -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <div class="copyright-text text-center text-md-left">
+                            <p>2020 | ООО "ВОСХОД"</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2">
+                        <div class="footer-social-link text-center text-md-right">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-vk"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer bottom area end -->
+    </footer>
+    <!-- End Footer Area Wrapper -->
 
+    <!-- offcanvas search form start -->
+    <!-- <div class="offcanvas-search-wrapper">
+        <div class="offcanvas-search-inner">
+            <div class="offcanvas-close">
+                <i class="ion-android-close"></i>
+            </div>
+            <div class="container">
+                <div class="offcanvas-search-box">
+                    <form class="d-flex bdr-bottom w-100">
+                        <input type="text" placeholder="Search entire storage here...">
+                        <button class="search-btn"><i class="ion-ios-search-strong"></i>search</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Wrapper End -->
-    <!-- jquery 3.12.4 -->
-    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
-    <!-- mobile menu js  -->
-    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
-    <!-- scroll-up js -->
-    <script src="{% static 'js/jquery.scrollUp.js' %}"></script>
-    <!-- owl-carousel js -->
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <!-- slick js -->
-    <script src="{% static 'js/slick.min.js' %}"></script>
-    <!-- wow js -->
-    <script src="{% static 'js/wow.min.js' %}"></script>
-    <!-- price slider js -->
-    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <!-- offcanvas search form end -->
 
-    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
-    <!-- nivo slider js -->
-    <script src="{% static 'js/jquery.nivo.slider.js' %}"></script>
-    <!-- fancybox js -->
-    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
-    <!-- bootstrap -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- popper -->
-    <script src="{% static 'js/popper.js' %}"></script>
-    <!-- plugins -->
-    <script src="{% static 'js/plugins.js' %}"></script>
-    <!-- main js -->
-    <script src="{% static 'js/main.js' %}"></script>
+    <!-- offcanvas mini cart start -->
+    <!--<div class="offcanvas-minicart-wrapper">
+        <div class="minicart-inner">
+            <div class="offcanvas-overlay"></div>
+            <div class="minicart-inner-content">
+                <div class="minicart-close">
+                    <i class="ion-android-close"></i>
+                </div>
+                <div class="minicart-content-box">
+                    <div class="minicart-item-wrapper">
+                        <ul>
+                            <li class="minicart-item">
+                                <div class="minicart-thumb">
+                                    <a href="product-details.html">
+                                        <img src="{% static '/img/cart/cart-1.jpg' %}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="minicart-content">
+                                    <h3 class="product-name">
+                                        <a href="product-details.html">Flowers bouquet pink for all flower lovers</a>
+                                    </h3>
+                                    <p>
+                                        <span class="cart-quantity">1 <strong>&times;</strong></span>
+                                        <span class="cart-price">$100.00</span>
+                                    </p>
+                                </div>
+                                <button class="minicart-remove"><i class="ion-android-close"></i></button>
+                            </li>
+                            <li class="minicart-item">
+                                <div class="minicart-thumb">
+                                    <a href="product-details.html">
+                                        <img src="{% static '/img/cart/cart-2.jpg' %}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="minicart-content">
+                                    <h3 class="product-name">
+                                        <a href="product-details.html">Jasmine flowers white for all flower lovers</a>
+                                    </h3>
+                                    <p>
+                                        <span class="cart-quantity">1 <strong>&times;</strong></span>
+                                        <span class="cart-price">$80.00</span>
+                                    </p>
+                                </div>
+                                <button class="minicart-remove"><i class="ion-android-close"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="minicart-pricing-box">
+                        <ul>
+                            <li>
+                                <span>sub-total</span>
+                                <span><strong>$300.00</strong></span>
+                            </li>
+                            <li>
+                                <span>Eco Tax (-2.00)</span>
+                                <span><strong>$10.00</strong></span>
+                            </li>
+                            <li>
+                                <span>VAT (20%)</span>
+                                <span><strong>$60.00</strong></span>
+                            </li>
+                            <li class="total">
+                                <span>total</span>
+                                <span><strong>$370.00</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="minicart-button">
+                        <a href="cart.html"><i class="fa fa-shopping-cart"></i> view cart</a>
+                        <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas mini cart end -->
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+    <!--=======================Javascript============================-->
+    <!--=== All Vendor Js ===-->
+    <script src="{% static '/js/vendor.js' %}"></script>
+    <!--=== All Plugins Js ===-->
+    <script src="{% static '/js/plugins.js' %}"></script>
+    <!--=== Active Js ===-->
+    <script src="{% static '/js/active.js' %}"></script>
 </body>
 
 </html>

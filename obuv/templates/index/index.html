@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- main wrapper start -->
+    <main>
+        {% include 'index/_slider.html' %}
+
+        {% include '_features.html' %}
+
+        {% include 'index/_product.html' %}
+
+        {% include '_anons.html' %}
+
+        <!-- top seller area start -->
+        <section class="top-seller-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h2 class="title">Топ продаж</h2>
+                            <p class="sub-title">Самые покупаемые модели нашего производства</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5 col-md-5">
+                        <div class="product-banner">
+                            <a href="#">
+                                <img src="{% static '/img/banner/banner-3.jpg' %}" alt="product banner">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-7 col-md-7">
+                        <div class="top-seller-carousel slick-row-15 mtn-30">
+                            {%  for Product in products %}
+                                {% if Product.top_sale == True %}
+                            <!-- product item start -->
+                            <div class="slide-item">
+                                <div class="pro-item-small mt-30">
+                                    <div class="product-thumb">
+                                        <a href="{% url 'product_view' Product.pk %}">
+                                            <img src="{{ Product.image1.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="pro-small-content">
+                                        <h6 class="product-name">
+                                            <a href="{% url 'product_view' Product.pk %}">{{ Product.type }} {{ Product.name }}</a>
+                                        </h6>
+                                        <div class="price-box">
+                                            <span>{{ Product.genre }}</span>
+                                        </div>
+                                        <div class="ratings">
+                                            <span><i class="ion-android-star"></i></span>
+                                            <span><i class="ion-android-star"></i></span>
+                                            <span><i class="ion-android-star"></i></span>
+                                            <span><i class="ion-android-star"></i></span>
+                                            <span><i class="ion-android-star"></i></span>
+                                        </div>
+                                        <div class="product-link-2">
+                                            <a href="catalog" data-toggle="tooltip" title="Каталог"><i class="ion-ios-folder-outline"></i></a>
+                                            <a href="#" data-toggle="modal" data-target="#mod-{{ Product.id }}"> <span data-toggle="tooltip"
+                                                title="Просмотр"><i class="ion-ios-eye-outline"></i></span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product item start -->
+                                {% endif %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- top seller area end -->
+
+        {% include 'index/../index/_articles.html' %}
+
+        <!-- brand area start -->
+        <div class="brand-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h2 class="title">Наши партнёры</h2>
+                            <p class="sub-title">Наши постоянные и крупнейшие покупатели </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="brand-active-carousel">
+                            {% for Partner in partners %}
+                            <div class="brand-item">
+                                <a href="{{ Partner.link }}" rel = 'nofollow' target="_blank">
+                                    <img src="{{ Partner.brend_logo.url }}" alt="{{ Partner.name }}">
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- brand area end -->
+    </main>
+    <!-- main wrapper end -->
+
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% load static %}
+
+<!-- banner statistic area start -->
+<div class="banner-statistics">
+    <div class="container">
+        <div class="row no-gutters mtn-30">
+            {% for Minibanner in minibanners %}
+                {% if Minibanner.public_all == True %}
+            <div class="col-md-6">
+                <div class="img-container mt-30">
+                    <a href="{{ Minibanner.link }}" rel = 'nofollow' target="_blank">
+                        <img src="{{ Minibanner.image.url}}" alt="{{ Minibanner.title }}">
+                    </a>
+                    <div class="banner-text">
+                        <h5 class="banner-subtitle">{{ Minibanner.title }}</h5>
+                        <h3 class="banner-title">{{ Minibanner.text }}</h3>
+                    </div>
+                </div>
+            </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- banner statistic area end -->

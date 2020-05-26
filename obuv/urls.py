@@ -6,6 +6,12 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('catalog/', views.catalog, name='catalog'),
+    path('catalog/<int:pk>/', views.product_view, name='product_view'),
+    path('about_us/', views.about_us, name='about_us'),
+    path('articles/', views.articles, name='articles'),
+    path('articles/<int:pk>/', views.articles_view, name='article_view'),
+    path('contacts/', views.contacts, name='contacts'),
 ]
 
 if settings.DEBUG:

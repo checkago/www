@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- main wrapper start -->
+    <main>
+        {% include 'index/_breadcrumbs.html' %}
+
+        <!-- blog main wrapper start -->
+        <div class="blog-main-wrapper section-padding">
+            <div class="container">
+                {% for About in abouts %}
+                <div class="row">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- blog single item start -->
+                                <div class="blog-post-item">
+                                    <div class="row">
+                                        <div class="blog-thumb col-md-6">
+                                            <img src="{{ About.image.url }}" alt="{{ About.title }}">
+                                        </div>
+                                        <div class="col-md-6 bg-primary">
+                                            <h5 class="blog-title">
+                                                {{ About.title }}
+                                            </h5>
+                                            <ul class="text-white">
+                                                <li><h4 class="text-white">Компания: {{ About.name }}</h4></li>
+                                                <li><span>Юр. Адрес: </span>{{ About.yur_adress }}</li>
+                                                <li><span>ИНН: </span>{{ About.inn }}</li>
+                                                <li><span>Дата основания: </span>{{ About.date }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content blog-details col-md-12 mt-5">
+                                        <p>{{ About.text1 | safe }}</p>
+                                        <blockquote>
+                                            <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur.
+                                            venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed,
+                                            cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin
+                                            dictum
+                                            tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque
+                                            scelerisque.</p>
+                                        </blockquote>
+                                        <p></p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img src="{{ About.image1.url }}">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="{{ About.image2.url }}">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="{{ About.image3.url }}">
+                                        </div>
+                                    </div>
+                                    <div class="blog-content blog-details col-md-12 mt-5 mb-5">
+                                        <p>{{ About.text2 | safe }}</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 align-items-center">
+                                            <img src="{{ About.image4.url }}">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="{{ About.image5.url }}">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="{{ About.image6.url }}">
+                                        </div>
+
+                                    </div>
+                                    <div class="blog-content blog-details col-md-12 mt-5">
+                                        <p>{{ About.text3 | safe }}</p>
+                                    </div>
+                                </div>
+                                {% include '_features.html' %}
+
+                                <div class="container mt-5">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="section-title text-center">
+                                                <h2 class="title">Наши партнёры</h2>
+                                                <p class="sub-title">Наши постоянные и крупнейшие покупатели </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="brand-active-carousel">
+                                                {% for Partner in partners %}
+                                                <div class="brand-item">
+                                                    <a href="{{ Partner.link }} " rel = 'nofollow' target="_blank">
+                                                        <img src="{{ Partner.brend_logo.url }}" alt="{{ Partner.name }}">
+                                                    </a>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- blog single item start -->
+                                    <!-- certificate -->
+                                <section>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6"></div>
+                                            <div class="col-md-6"></div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- blog main wrapper end -->
+    </main>
+    <!-- main wrapper end -->
+
+{% endblock %}

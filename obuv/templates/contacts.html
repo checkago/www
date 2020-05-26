@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- main wrapper start -->
+    <main>
+        {% include 'index/_breadcrumbs.html' %}
+
+            <!-- contact wrapper area start -->
+        <div class="contact-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-message">
+                            <h2 class="contact-title">Свяжитесь с нами</h2>
+                            <form id="contact-form" action="whizthemes.com/mail-php/genger/mail.php.htm" method="post" class="contact-form">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <input name="first_name" placeholder="Ваше Имя *" type="text" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <input name="phone" placeholder="Телефон *" type="text" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <input name="email_address" placeholder="Почта *" type="text" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <input name="contact_subject" placeholder="Тема *" type="text">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="contact2-textarea text-center">
+                                            <textarea placeholder="Сообщение *" name="message" class="form-control2" required=""></textarea>
+                                        </div>
+                                        <div class="contact-btn">
+                                            <button class="btn" type="submit">Отправить</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <p class="form-messege"></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-info pt-0">
+                            <h2 class="contact-title">Наши контакты</h2>
+                            <p>Мы всегда на связи. Звоните или оставляйте заявку с помощью формы слева. Наши менеджеры в кратчайщие сроки с Вами свяжутся.</p>
+                            <ul>
+                                <li><i class="fa fa-map-marker"></i> Адресс : Россия, Московская область, г. Мытищи</li>
+                                <li><i class="fa fa-envelope-o"></i> info@obuv-era.ru</li>
+                                <li><i class="fa fa-phone"></i> +7 (495) 555-55-55</li>
+                            </ul>
+                            <div class="working-time">
+                                <h3>Время работы менеджеров</h3>
+                                <p class="pb-0"><span>Понедельник – Пятница:</span>08:00 – 20:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- contact wrapper area end -->
+    </main>
+    <!-- main wrapper end -->
+
+{% endblock %}

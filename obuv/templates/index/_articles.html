@@ -1,0 +1,45 @@
+{% load static %}
+
+        <!-- latest blog area start -->
+        <section class="latest-blog-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h2 class="title">ВЫБИРАЮ ЭРА-РА</h2>
+                            <p class="sub-title">Коротко о том, почему обувь нашего производства востребованна и качественна</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="blog-carousel-active slick-row-15">
+                            {% for Article in articles %}
+                                {% if Article.main_page == True %}
+                            <!-- blog single item start -->
+                            <div class="blog-post-item">
+                                <div class="blog-thumb">
+                                    <a href="{% url 'article_view' Article.pk %}">
+                                        <img src="{{ Article.thumbnail.url }}" alt="{{ Article.short_text | safe }}">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+                                    <h5 class="blog-title">
+                                        <a href="{% url 'article_view' Article.pk %}">
+                                            {{ Article.title }}
+                                        </a>
+                                    </h5>
+                                    <h6>{{ Article.short_text | safe }}</h6>
+                                    <a href="{% url 'article_view' Article.pk %}" class="read-more">Подробнее...</a>
+                                </div>
+                            </div>
+                            <!-- blog single item start -->
+                                {% endif %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- latest blog area end -->

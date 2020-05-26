@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- main wrapper start -->
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area bg-img" data-bg="assets/img/banner/breadcrumb-banner.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-wrap text-center">
+                            <nav aria-label="breadcrumb">
+                                <h1 class="breadcrumb-title">{{ article.art_title }}</h1>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> </a></li>
+                                    <li class="breadcrumb-item">/</li>
+                                    <li class="breadcrumb-item"><a href="/articles">Статьи</a></li>
+                                    <li class="breadcrumb-item">/</li>
+                                    <li class="breadcrumb-item active" aria-current="">{{ article.art_title }}</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- blog main wrapper start -->
+        <div class="blog-main-wrapper section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- blog single item start -->
+                                <div class="blog-post-item">
+                                    <div class="blog-thumb">
+                                        <img src="{{ article.image.url }}" alt="{{ article.art_title }}">
+                                    </div>
+                                    <div class="blog-content blog-details">
+                                        <h5 class="blog-title">
+                                            {{ article.art_title }}
+                                        </h5>
+                                        <p>{{ article.short_text | safe }}</p>
+
+                                        <p>{{ article.full_text | safe }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- blog single item start -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- blog main wrapper end -->
+
+    </main>
+    <!-- main wrapper end -->
+
+{% endblock %}

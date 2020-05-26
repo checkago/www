@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 
 
-class ObuvConfig(AppConfig):
+class ObuvAppConfig(AppConfig):
     name = 'obuv'
+    verbose_name = 'Обувь'

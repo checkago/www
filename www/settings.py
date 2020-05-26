@@ -25,8 +25,8 @@ SECRET_KEY = '1%zawez333et7c5@wp5i%tbun#ot@-dd241)w!6d^et8)nxg7w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['87.247.157.153', 'localhost', '127.0.0.1']
 
+ALLOWED_HOSTS = ['87.247.157.153', 'localhost', '127.0.0.1', 'obuv-era.ru']
 
 # Application definition
 
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'obuv'
+    'obuv',
+    'admin_reorder',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -48,9 +50,37 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
 ]
 
+
 ROOT_URLCONF = 'www.urls'
+
+ADMIN_REORDER = (
+    # First group
+    {'app': 'obuv', 'label': 'Главная страница',
+     'models': ('obuv.Banner',
+                'obuv.Minibanner',
+                'obuv.Partner',)
+    },
+    # Second group: same app, but different label
+    {'app': 'obuv', 'label': 'Каталог',
+     'models': ('obuv.Product',)
+    },
+    # Second group: same app, but different label
+    {'app': 'obuv', 'label': 'Атрибуты',
+     'models': ('obuv.Genre', 'obuv.Type', 'obuv.Color', 'obuv.Size',
+                'obuv.Verh', 'obuv.Podkladka', 'obuv.Podoshva',)
+     },
+
+    {'app': 'obuv', 'label': 'Статьи',
+     'models': ('obuv.Article',)
+     },
+
+    {'app': 'obuv', 'label': 'Раздел о Нас',
+     'models': ('obuv.About', 'obuv.Proizvodstvo')
+     },)
+
 
 TEMPLATES = [
     {
@@ -127,3 +157,9 @@ STATICFILES_DIRS =  (
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'Full',
+    },
+}
